@@ -1,0 +1,1 @@
+To verify email <a href="{{URL::to('/emailVerified/'.$data->id)}}">Click Here</a>

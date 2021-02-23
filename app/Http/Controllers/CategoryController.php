@@ -77,7 +77,7 @@ class CategoryController extends Controller
         ->where('category_id',$category_id)
         ->update(['publication_status'=>0]);
 
-        Session::put('message','Unactivated Successfully');
+        Session::put('message','Inactivated Successfully');
 
         return redirect('/all_category');
     }

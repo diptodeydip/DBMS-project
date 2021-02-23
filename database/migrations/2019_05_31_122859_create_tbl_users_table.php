@@ -20,7 +20,7 @@ class CreateTblUsersTable extends Migration
             $table->string('password');
             $table->string('mobile');
             $table->string('user_type');
-            $table->boolean('status')->default(false);
+            $table->boolean('status')->default(false); 
             $table->string('profile_image');
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
         });

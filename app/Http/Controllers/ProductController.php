@@ -166,7 +166,7 @@ class ProductController extends Controller
         ->where('product_id',$product_id)
         ->update(['publication_status'=>0]);
 
-        Session::put('message','Unactivated Successfully');
+        Session::put('message','Inactivated Successfully');
 
         return redirect('/all_product');
     }

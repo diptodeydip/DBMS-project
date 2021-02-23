@@ -142,6 +142,9 @@ class UserController extends Controller
     	$data['name']=($request->user_name);
     	$data['password']=($request->password);
     	$data['mobile']=($request->mobile_number);
+        $data['status']=1;
+        #  $data['status']=1; every user is now verified because cant send email from local server. if needed change $data['status'] to 0
+        # if $data['status'] is '0' then  user is not verified and an email will be sent after first regesration and until final verification
         $user_type = Session::get('user_type');
         $data['user_type']=($user_type);
         Session::put('user_type',null);
@@ -183,7 +186,9 @@ class UserController extends Controller
                 ",[$request->user_email]
             );
 
-           Mail::to($result[0]->email)->send(new verifyEmail($result[0]));
+           #Mail::to($result[0]->email)->send(new verifyEmail($result[0]));
+            # temporarily commented out because can't send email for verificatoin from
+            # local server. if this website is live then it is possible and you can remove comment.
 
             if($user_type=="Teacher"){
                 $data1=array();
@@ -299,7 +304,7 @@ class UserController extends Controller
 
     public function send_password(Request $request){
 
-        $email=$request->user_email;
+        /*$email=$request->user_email;
         
             $result = DB::select(
                 "select * from tbl_users where email =?
@@ -313,7 +318,11 @@ class UserController extends Controller
         else{
             Session::put('message','Invalid Email');
             
-        }
+        }*/
+         # temporarily commented out because can't send email for verificatoin from
+        # local server. if this website is live then it is possible and you can remove comment.
+        Session::put('message1',"Cant send email from local server. Because googleApi is used. Have to use mailTrap.io");
+        # if email system is activated then remove the line above.
         return redirect('/user_login_page');
     }
 

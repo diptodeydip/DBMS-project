@@ -141,7 +141,7 @@ a:hover {
                         <div class="mainmenu pull-left">
                             <ul class="nav navbar-nav collapse navbar-collapse">
                                 {{-- <li><a href="/" class="active">Home</a></li> --}}
-                                <li><a href="/" style="font-style: bold; font-size: 20px;">Home</a></li>
+                                <li><a href="{{URL::to('/')}}" style="font-style: bold; font-size: 20px;">Home</a></li>
                                 {{-- <li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
                                         <li><a href="{{URL::to('/products')}}">Products</a></li> 

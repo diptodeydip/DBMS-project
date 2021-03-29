@@ -1,5 +1,5 @@
 # Kenabecha#com
-This is a E-commerce site where one can post ads and contact with other sellers
+This is an E-commerce site where one can post ads and contact with other sellers
 
 It was developed as a course work for DBMS lab course (3/1)
 
